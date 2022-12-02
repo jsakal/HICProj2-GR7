@@ -8,6 +8,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<script>
+    function buttonChange(x) {
+        x.innerHTML = "Added";
+        x.classList = "btn btn-warning btn-block disabled";
+    }
+</script>
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -19,14 +25,14 @@
           <ul class="nav navbar-nav">
             <li class="active" style="width: 145px"><a href="MenuDisplay.html"><center><p style="margin-bottom: 0px;">View Our Menu</p><span class="glyphicon glyphicon-cutlery"></span></center></a></li>
             <li style="width: 145px"><a href="#"><center><p style="margin-bottom: 0px;">Go to Your Cart</p><span class="glyphicon glyphicon-shopping-cart"></span></center></a></li>
-            <li style="width: 145px"><a href="#"><center><p style="margin-bottom: 0px;">Customer Service</p><span class="glyphicon glyphicon-phone-alt"></span></center></a></li>
+            <li style="width: 145px"><a href="CustomerService.html"><center><p style="margin-bottom: 0px;">Customer Service</p><span class="glyphicon glyphicon-phone-alt"></span></center></a></li>
           </ul>
         </div>
     </nav>
     <div class="row">
         <div class ="col-md-4">
             <div class="thumbnail">
-                <a href="/photos/hotdog.jpg"> <!--Change to item display link when added-->
+                <a href="ItemDisplay.html"> <!--Change to item display link when added-->
                     <img src="./photos/hotdog.jpg" class="thumbnail"  style="width:100%">
                 </a>
                 <div class="caption" style="height: 90px;">
@@ -39,7 +45,7 @@
                         <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -10px;">
                             <label for="hotdogAmnt">Quantity</label>
                             <input type ="number" min="0" class="form-control" id="hotdogAmnt">
-                            <button type="button" class="btn btn-warning btn-block">Add To Cart</button>
+                            <button type="button" class="btn btn-warning btn-block" onclick="buttonChange(this)">Add To Cart</button>
                         </div>
                     </div>
                 </div>
@@ -47,7 +53,7 @@
         </div>
         <div class ="col-md-4">
             <div class="thumbnail">
-                <a href="/photos/hotdog.jpg"> <!--Change to item display link when added-->
+                <a href="ItemDisplay.html"> <!--Change to item display link when added-->
                     <img src="./photos/frenchfries.jpg" class="thumbnail" style="width:100%">
                 </a>
                 <div class="caption" style="height: 90px;">
@@ -60,7 +66,7 @@
                         <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -10px;">
                             <label for="friesAmnt">Quantity</label>
                             <input type ="number" min="0" class="form-control" id="friesAmnt">
-                            <button type="button" class="btn btn-warning btn-block">Add To Cart</button>
+                            <button type="button" class="btn btn-warning btn-block" onclick="buttonChange(this)">Add To Cart</button>
                         </div>
                     </div>
                 </div>
@@ -68,7 +74,7 @@
         </div>
         <div class ="col-md-4">
             <div class="thumbnail">
-                <a href="/photos/hotdog.jpg"> <!--Change to item display link when added-->
+                <a href="ItemDisplay.html"> <!--Change to item display link when added-->
                     <img src="./photos/soda.jpg" class="thumbnail" style="width:100%">
                 </a>
                 <div class="caption" style="height: 90px;">
@@ -81,7 +87,7 @@
                         <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -10px;">
                             <label for="sodaAmnt">Quantity</label>
                             <input type ="number" min="0" class="form-control" id="sodaAmnt">
-                            <button type="button" class="btn btn-warning btn-block">Add To Cart</button>
+                            <button type="button" class="btn btn-warning btn-block" onclick="buttonChange(this)">Add To Cart</button>
                         </div>
                     </div>
                 </div>
