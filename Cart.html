@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bastion Of Goods</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img src="./photos/logo1.png" width="100px" height="50px" style="position:relative; top: -6px;">
+          </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li style="width: 145px">
+            <a href="MenuDisplay.html">
+              <center>
+                <p style="margin-bottom: 0px;">View Our Menu</p>
+                <span class="glyphicon glyphicon-cutlery"></span>
+              </center>
+            </a>
+          </li>
+          <li class="active" style="width: 145px">
+            <a href="#">
+              <center>
+                <p style="margin-bottom: 0px;">Go to Your Cart</p>
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+              </center>
+            </a>
+          </li>
+          <li style="width: 145px">
+            <a href="#">
+              <center>
+                <p style="margin-bottom: 0px;">Customer Service</p>
+                <span class="glyphicon glyphicon-phone-alt"></span>
+              </center>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="Header">
+      <h3 class="Heading">Shopping Cart</h3>
+      <button class="button" style="position: relative; left: 600px">Remove all</button>
+    </div>
+    <div class="row-md-4" style="width: 40%">
+      <div class="thumbnail">
+        <a href="/photos/hotdog.jpg">
+          <img src="./photos/hotdog.jpg" class="thumbnail" style="width:100%; height:100%;">
+        </a>
+        <div class="caption" style="height: 60px;">
+          <h2 style="margin: 0; position: relative; top: -5px;">Hot Dog</h2>
+          <div class="form-group row" style="margin: 0; position: relative; top: -20px; left: -10px;">
+            <div class="col-xs-8"></div>
+            <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -80px;">
+              <label for="dogAmnt">Quantity</label>
+              <input type="number" min="1" class="form-control" id="dogAmnt">
+              <button class="button" style="margin: 0; position: relative; top: -25px; left: 130px;">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-md-4" style="width: 40%">
+      <div class="thumbnail">
+        <a href="/photos/hotdog.jpg">
+          <img src="./photos/frenchfries.jpg" class="thumbnail" style="width:100%; height:100%;">
+        </a>
+        <div class="caption" style="height: 60px;">
+          <h2 style="margin: 0; position: relative; top: -5px;">French Fries</h2>
+          <div class="form-group row" style="margin: 0; position: relative; top: -20px; left: -10px;">
+            <div class="col-xs-8"></div>
+            <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -80px;">
+              <label for="dogAmnt">Quantity</label>
+              <input type="number" min="1" class="form-control" id="fryAmnt">
+              <button class="button" style="margin: 0; position: relative; top: -25px; left: 130px;">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-md-4" style="width: 40%">
+      <div class="thumbnail">
+        <a href="/photos/hotdog.jpg">
+          <img src="./photos/soda.jpg" class="thumbnail" style="width:100%; height:100%;">
+        </a>
+        <div class="caption" style="height: 60px;">
+          <h2 style="margin: 0; position: relative; top: -5px;">Soda</h2>
+          <div class="form-group row" style="margin: 0; position: relative; top: -20px; left: -10px;">
+            <div class="col-xs-8"></div>
+            <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -80px;">
+              <label for="dogAmnt">Quantity</label>
+              <input type="number" min="1" class="form-control" id="sodaAmnt">
+              <button class="button" style="margin: 0; position: relative; top: -25px; left: 130px;">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr style="margin:0; position: relative; left: -480px;">
+    <div class="total">
+      <div>
+        <div class="total" style="margin:0; position: relative; left: -480px;">Total: $</div>
+        <div class="items" style="margin:0; position: relative; left: -480px;">0 items</div>
+      </div>
+    </div>
+    <button class="button">Checkout</button>
+  </body>
+</html>
