@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <style>
+    .borderthis {
+        margin-top:10px;
+        outline: 2px solid grey;
+        outline-offset: -8px;
+        height: 150px;
+    }
+  </style>
+  <title>Bastion Of Goods</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Nav-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img src="./photos/logo1.png" width="100px" height="50px" style="position:relative; top: -6px;">
+            </a> 
+          </div>
+          <ul class="nav navbar-nav">
+            <li style="width: 145px"><a href="MenuDisplay.html"><center><p style="margin-bottom: 0px;">View Our Menu</p><span class="glyphicon glyphicon-cutlery"></span></center></a></li>
+            <li style="width: 145px"><a href="Cart.html"><center><p style="margin-bottom: 0px;">Go to Your Cart</p><span class="glyphicon glyphicon-shopping-cart"></span></center></a></li>
+            <li style="width: 145px"><a href="CustomerService.html"><center><p style="margin-bottom: 0px;">Customer Service</p><span class="glyphicon glyphicon-phone-alt"></span></center></a></li>
+          </ul>
+        </div>
+    </nav>
+    <!-- Title and button -->
+    <div class="row">
+        <div class="col-sm-9" style="padding-left:100px;">
+            <h2>Review Your Order</h2>
+        </div>
+        <div class="col-sm-3">
+            <a class="btn btn-success" role="button" href="OrderPlacedDisplay.html">Place Order and Confirm</a>
+        </div>
+    </div>
+    <div class="row">
+        <!-- The cols (all dummy txt) -->
+        <div class="col-sm-3">
+            <div class="col-sm-12 borderthis">
+                <h3 class="text-center">Delivery Address</h3>
+                <p>123 Sesame Street<br>Kent, OH<br>44202</p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm-12 borderthis">
+                <h3 class="text-center">Billing Address</h3>
+                <p>(Same as delivery address)</p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm-12 borderthis">
+                <h3 class="text-center">Delivery Estimate</h3>
+                <p>23-27 minutes (may vary by time of day)</p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm-12 borderthis">
+                <h3 class="text-center">Payment Method</h3>
+                <p>Visa Debit Card<br>**** **** **** 7890<br>Zip: 10027</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container" style="margin-top: 15px;">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="photos/hotdog.jpg" alt="test" style="max-height: 300px;"></td>
+                        <td><input type="number" value="1"></td>
+                        <td>$18.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
