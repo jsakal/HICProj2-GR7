@@ -63,31 +63,46 @@
             </section><hr>
 
             <section>
+
+                <style>
+                .column {
+                    float: left;
+                    width: 33.33%;
+                    padding: 5px;
+                    padding-left: 100px;
+                    padding-bottom: 5px;
+                }
+
+                .row::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+                }
+                </style>
             
-            <div class="row" style="background: white;">
-                <center>
+            <div class="row" style="background: rgb(255, 255, 255);">
+                
                     <a href="ItemDisplay.html">
 
-                    <p style="padding: 10px;">
+                    <p style="padding: 5px;">
 
                     <div class="column">
-                        <figure>
-                            <img src="./photos/frenchfries.jpg" class="thumbnail" style="width:15%;">
-                            <figcaption>Our delicious fried potatoes</figcaption>
-                        </figure>
+                            <img src="./photos/frenchfries.jpg" class="" style="width:50%;" alt="Our delicious fried potatoes.">
+                            <!--<figcaption>Our delicious fried potatoes</figcaption></!-->
                     </div>
                 
                     <div class="column">
-                        <figure>
-                            <img src="./photos/hotdog.jpg" class="thumbnail" style="width: 15%;">
-                            <figcaption>Our award-winning hot dogs</figcaption>
-                        
-                        </figure>
+                            <img src="./photos/hotdog.jpg" class="" style="width: 50%;" alt="Our award-winning hot dogs.">
+                            <!--<figcaption>Our award-winning hot dogs</figcaption></!-->
+                    </div>
+
+                    <div class="column">
+                        <img src="./photos/soda.jpg" style="width:50%;" alt="Classic soda beverages.">
                     </div>
 
                     </style></p>
                     </a>
-                </center>
+                
             </div>
 
             </section><hr>
