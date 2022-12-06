@@ -85,15 +85,25 @@
         // Return the parsed data.
         return( arrData );
     }
-    function loadPrices()
+    function readTextFile()
     {
-        /*
-            Ideally I would have read in a CSV here and converted it to a string.
-        */
-        var prices = CSVToArray("5.99,3.99,1.99"); //This is where the CSV text should go. But unfortunately javascript can't easily read local filesystems
-        document.getElementById("Hotdog").innerHTML = prices[0][0];
-        document.getElementById("Fries").innerHTML = prices[0][1];
-        document.getElementById("Soda").innerHTML = prices[0][2];
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", "test.csv", false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
+                    var prices = CSVToArray(allText);
+                    document.getElementById("Hotdog").innerHTML = prices[0][0];
+                    document.getElementById("Fries").innerHTML = prices[0][1];
+                    document.getElementById("Soda").innerHTML = prices[0][2];
+                }
+            }
+        }
+        rawFile.send(null);
     }
 </script>
   <meta charset="utf-8">
@@ -108,7 +118,7 @@
         x.classList = "btn btn-warning btn-block disabled";
     }
 </script>
-<body onload="loadPrices()">
+<body onload="readTextFile()">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
