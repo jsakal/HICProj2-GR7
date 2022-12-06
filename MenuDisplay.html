@@ -2,6 +2,100 @@
 <html lang="en">
 <head> 
   <title>Bastion Of Goods</title>
+  <script>
+    function CSVToArray( strData, strDelimiter ){
+        // Check to see if the delimiter is defined. If not,
+        // then default to comma.
+        strDelimiter = (strDelimiter || ",");
+
+        // Create a regular expression to parse the CSV values.
+        var objPattern = new RegExp(
+            (
+                // Delimiters.
+                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+
+                // Quoted fields.
+                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+
+                // Standard fields.
+                "([^\"\\" + strDelimiter + "\\r\\n]*))"
+            ),
+            "gi"
+            );
+
+
+        // Create an array to hold our data. Give the array
+        // a default empty first row.
+        var arrData = [[]];
+
+        // Create an array to hold our individual pattern
+        // matching groups.
+        var arrMatches = null;
+
+
+        // Keep looping over the regular expression matches
+        // until we can no longer find a match.
+        while (arrMatches = objPattern.exec( strData )){
+
+            // Get the delimiter that was found.
+            var strMatchedDelimiter = arrMatches[ 1 ];
+
+            // Check to see if the given delimiter has a length
+            // (is not the start of string) and if it matches
+            // field delimiter. If id does not, then we know
+            // that this delimiter is a row delimiter.
+            if (
+                strMatchedDelimiter.length &&
+                strMatchedDelimiter !== strDelimiter
+                ){
+
+                // Since we have reached a new row of data,
+                // add an empty row to our data array.
+                arrData.push( [] );
+
+            }
+
+            var strMatchedValue;
+
+            // Now that we have our delimiter out of the way,
+            // let's check to see which kind of value we
+            // captured (quoted or unquoted).
+            if (arrMatches[ 2 ]){
+
+                // We found a quoted value. When we capture
+                // this value, unescape any double quotes.
+                strMatchedValue = arrMatches[ 2 ].replace(
+                    new RegExp( "\"\"", "g" ),
+                    "\""
+                    );
+
+            } else {
+
+                // We found a non-quoted value.
+                strMatchedValue = arrMatches[ 3 ];
+
+            }
+
+
+            // Now that we have our value string, let's add
+            // it to the data array.
+            arrData[ arrData.length - 1 ].push( strMatchedValue );
+        }
+
+        // Return the parsed data.
+        return( arrData );
+    }
+    function loadPrices()
+    {
+        /*
+            Ideally I would have read in a CSV here and converted it to a string.
+        */
+        var prices = CSVToArray("5.99,3.99,1.99"); //This is where the CSV text should go. But unfortunately javascript can't easily read local filesystems
+        document.getElementById("Hotdog").innerHTML = prices[0][0];
+        document.getElementById("Fries").innerHTML = prices[0][1];
+        document.getElementById("Soda").innerHTML = prices[0][2];
+    }
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,7 +108,7 @@
         x.classList = "btn btn-warning btn-block disabled";
     }
 </script>
-<body>
+<body onload="loadPrices()">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -40,7 +134,7 @@
                     <div class="form-group row" style="margin: 0; position: relative; top: -20px; left: -10px;">
                         <div class="col-xs-8">
                             <p>Our signature All-Beef Hotdog topped with Ketchup, Yellow Mustard, and Diced Sweet Pickles and Onions.</p>
-                            <h4>$4.99</h4>
+                            <h4 id="Hotdog">$4.99</h4>
                         </div>
                         <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -10px;">
                             <label for="hotdogAmnt">Quantity</label>
@@ -61,7 +155,7 @@
                     <div class="form-group row" style="margin: 0; position: relative; top: -20px; left: -10px;">
                         <div class="col-xs-8">
                             <p>Freshly-Cut Russet potatoes washed and deepfried in peanut oil. Served with salt.</p>
-                            <h4>$3.99</h4>
+                            <h4 id="Fries">$3.99</h4>
                         </div>
                         <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -10px;">
                             <label for="friesAmnt">Quantity</label>
@@ -82,7 +176,7 @@
                     <div class="form-group row" style="margin: 0; position: relative; top: -20px; left: -10px;">
                         <div class="col-xs-8">
                             <p>A cool, crisp, and refreshing cola served with just the right amount of ice. Tasty!</p>
-                            <h4>$1.99</h4>
+                            <h4 id="Soda">$1.99</h4>
                         </div>
                         <div class="col-sm-4" style="margin: 0; position: relative; top: -30px; left: -10px;">
                             <label for="sodaAmnt">Quantity</label>
