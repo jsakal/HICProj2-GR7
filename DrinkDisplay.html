@@ -30,8 +30,8 @@
                     <h2 style="margin: 0; position: relative;"</h2>
                     <div class="form-group row" style="margin: 0; position: relative; top: 10px; left: 50px; font-family:Georgia, 'Times New Roman', Times, serif;">
                         <div class="col-xs-8">
-                            <p>Crafted everyday from scratch and using only the finest ingredients we offer you our premium freshly-cut french fries.</p>
-                            <p>These tiny slices of potatoes are delicious when paired with a <a href="HotdogDisplay.html">hotdog</a> or just as a snack.</p>
+                            <p>We serve all your favorite soft drinks carbonated to perfection!</p>
+                            <p>Our cool, refreshing drinks pair well with our salty, cripsy, <a href="ItemDisplay.html">freshly-cut french fries.</a></p>
                         </div>
                     </div>
                 </div>
@@ -39,24 +39,25 @@
         </div>
         <div class ="col-md-4">
             <div class="thumbnail">
-                <a href="/photos/hotdog.jpg"> 
-                    <img src="./photos/frenchfries.jpg" class="thumbnail" style="width:100%">
+                <a href="ItemDisplay.html"> <!--Change to item display link when added-->
+                    <img src="./photos/soda.jpg" class="thumbnail" style="width:100%">
                 </a>
                 <div class="caption" style="height: 90px;">
-                    <h2 style="margin: 0; position: relative; top: -23px;">French Fries</h2>
+                    <h2 style="margin: 0; position: relative; top: -23px;">Soda</h2>
                     <div class="form-group row" style="margin: 0; position: relative; top: -20px; left: -10px; font-family:Georgia, 'Times New Roman', Times, serif;">
                         <div class="col-xs-8">
-                            <p>Freshly-Cut Russet potatoes washed and deepfried in peanut oil. Served with salt.</p>
-                            <h4>$3.99</h4>
+                            <p>A cool, crisp, and refreshing cola served with just the right amount of ice. Tasty!</p>
+                            <h4 id="Soda">0</h4>
                         </div>
                         <div class="col-xs-4" style="margin: 0; position: relative; top: -30px; left: -10px; font-family:Georgia, 'Times New Roman', Times, serif;">
-                            <label for="friesAmnt">Quantity</label>
-                            <input type ="number" min="0" class="form-control" id="friesAmnt">
-                            <button type="button" class="btn btn-warning btn-block">Add To Cart</button>
+                            <label for="sodaAmnt">Quantity</label>
+                            <input type ="number" min="0" class="form-control" id="sodaAmnt">
+                            <button type="button" class="btn btn-warning btn-block" onclick="buttonChange(this)">Add To Cart</button>
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
-</body>
+    </body>
 </html>
